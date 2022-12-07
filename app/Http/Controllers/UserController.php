@@ -28,7 +28,11 @@ class UserController extends Controller
     }
 
 
-    //Create New User
+    /**
+     * Create New User
+     *
+     * @param Request $request
+     */
     public function store(Request $request)
     {
         //validation
@@ -47,4 +51,30 @@ class UserController extends Controller
 
         return redirect(route('user.login'));
     }
+
+
+
+   /**
+     * Authenticate User
+     *
+     * @param Request $request
+     */
+    public function authenticate(Request $request) {
+        //validation
+        $formFields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]);
+
+        //
+        if(auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+
+            return redirect(route('posts'));
+        }
+
+        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+    }
+
+
 }
