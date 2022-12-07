@@ -15,4 +15,14 @@ class UserController extends Controller
     {
         return view('users.login');
     }
+
+
+    /**
+     * Show Register/Create Form
+     *
+     */
+    public function register()
+    {
+        return view('users.register');
+    }
 }

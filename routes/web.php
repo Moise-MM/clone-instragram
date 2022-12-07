@@ -14,4 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Users
 Route::get('/', [UserController::class,'login'])->name('user.login');
+//
+Route::get('/account/singup', [UserController::class,'register'])->name('user.register');
