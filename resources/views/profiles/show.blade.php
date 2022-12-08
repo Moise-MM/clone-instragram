@@ -17,11 +17,10 @@
                {{ $user->fullname }}
             </div>
             <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                {{ $user->profile->desc }}
             </div>
             <div>
-                <a href="">www.moise.com</a>
+                <a href="{{ $user->profile->url ?? "" }}">{{ $user->profile->url ?? "N/A" }}</a>
             </div>
         </div>
     </div>
