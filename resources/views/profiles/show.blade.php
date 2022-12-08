@@ -17,7 +17,7 @@
                {{ $user->fullname }}
             </div>
             <div>
-                {{ $user->profile->desc }}
+                {{ $user->profile->description ?? " " }}
             </div>
             <div>
                 <a href="{{ $user->profile->url ?? "" }}">{{ $user->profile->url ?? "N/A" }}</a>
