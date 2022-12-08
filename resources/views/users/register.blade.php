@@ -50,7 +50,7 @@
     </div>
     <div class="row">
         <div class="col-md-4  mx-auto mt-3">
-            <p>Have an account? <a href="{{ route('user.login') }}">Log in</a> </p>
+            <p>Have an account? <a href="{{ route('login') }}">Log in</a> </p>
         </div>
     </div>
 

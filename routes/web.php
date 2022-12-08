@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Users
-Route::get('/', [UserController::class,'login'])->name('user.login');
+Route::get('/login', [UserController::class,'login'])->name('login');
 //
 Route::get('/account/singup', [UserController::class,'register'])->name('user.register');
 //
@@ -27,7 +27,7 @@ Route::post('/login',[UserController::class,'authenticate'])->name("user.auth");
 
 //---------------------------
 //Posts
-Route::get('/posts', [PostController::class,'index'])->name('post.index');
+Route::get('/', [PostController::class,'index'])->name('post.index');
 
 //--------------------------
 //UserPost

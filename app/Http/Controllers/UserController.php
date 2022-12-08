@@ -38,8 +38,8 @@ class UserController extends Controller
         //validation
         $formFields = $request->validate([
             'email' => ['required','unique:users,email','email'],
-            'fullname' => ['required','min:5'],
-            'username' => ['required','unique:users,username','min:5'],
+            'fullname' => ['required','min:5', 'string'],
+            'username' => ['required','unique:users,username','min:5','string'],
             'password' => ['required','min:5']
         ]);
 
@@ -70,7 +70,7 @@ class UserController extends Controller
         if(auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
-            return redirect(route('posts'));
+            return redirect(route('post.index'));
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');

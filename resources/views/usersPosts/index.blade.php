@@ -6,7 +6,7 @@
         </div>
         <div class="col-6 pt-5">
             <div>
-                <h1>Moise-MM</h1>
+                <h1>{{ Auth::user()->username }}</h1>
             </div>
             <div class="d-flex">
                 <div class="pr-4"><strong class="mr-1">200</strong>posts</div>
@@ -14,7 +14,7 @@
                 <div class="pr-4"><strong class="mr-1">100</strong>following</div>
             </div>
             <div class="pt-4 font-weight-bold" style="font-size:1.5rem">
-                Moise Mutangala
+               {{ Auth::user()->fullname }}
             </div>
             <div>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
