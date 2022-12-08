@@ -49,7 +49,7 @@ class UserController extends Controller
         //store
         User::create($formFields);
 
-        return redirect(route('user.login'));
+        return redirect(route('login'));
     }
 
 
@@ -74,6 +74,25 @@ class UserController extends Controller
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+    }
+
+
+
+    /**
+      * Logout User
+      *
+      * @param Request $request
+      */
+      public function logout(Request $request) {
+        //remove the authentication information from the user session
+        auth()->logout();
+
+        //
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect(route('login'));
+
     }
 
 

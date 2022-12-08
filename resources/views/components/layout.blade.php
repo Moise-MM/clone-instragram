@@ -50,10 +50,16 @@
                         </a>
                     </li>
                     <li class="nav-item pt-3" style="font-size: 1.3rem">
-                        <a href="{{ route('userPost.index') }}" class="nav-link" data-class="fixed-left">
+                        <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link" data-class="fixed-left">
                             <i class="far fa-user-circle mr-2"></i>
                             Profile
                         </a>
+                    </li>
+                    <li class="nav-item pt-3" style="font-size: 1.3rem">
+                        <form action="{{ route('user.logout') }}" method="POST" class="inline">
+                            @csrf
+                            <button type="submit"  style="border: none; background-color:white">Log out</button>
+                        </form>
                     </li>
                 </ul>
             </ul>
