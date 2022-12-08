@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserPostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,7 @@ Route::post('/login',[UserController::class,'authenticate'])->name("user.auth");
 //---------------------------
 //Posts
 Route::get('/posts', [PostController::class,'index'])->name('post.index');
+
+//--------------------------
+//UserPost
+Route::get('/profile',[UserPostController::class,'index'])->name('userPost.index');

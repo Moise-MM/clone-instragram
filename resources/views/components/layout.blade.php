@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap Navbar Sidebar - Fixed to Left or Right</title>
+    <title>Instragram</title>
     <link rel="stylesheet" id="theme_link"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/navbar-fixed-left.min.css') }}">
@@ -50,7 +50,7 @@
                         </a>
                     </li>
                     <li class="nav-item pt-3" style="font-size: 1.3rem">
-                        <a class="nav-link" data-class="fixed-left">
+                        <a href="{{ route('userPost.index') }}" class="nav-link" data-class="fixed-left">
                             <i class="far fa-user-circle mr-2"></i>
                             Profile
                         </a>
