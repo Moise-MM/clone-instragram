@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
@@ -51,12 +52,16 @@ class PostController extends Controller
 
         $imagePath = request('image')->store('updloads','public');
 
-        $formFields['image'] = $imagePath;
+        //resize image
+        $image = Image::make(public_path('storage/'.$imagePath))->fit(1200,1200);
+        $image->save();
 
        //
        //auth()->user()->posts()->create($formFields);
        //add user_id
        //$formFields['user_id'] = auth()->user()->id;
+
+       $formFields['image'] = $imagePath;
 
        //store post
        auth()->user()->posts()->create($formFields);
