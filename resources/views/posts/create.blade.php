@@ -5,7 +5,7 @@
             <div class="col-md-4 mx-auto mt-5">
                 <h1 class="h3">Create new post</h1>
                 <hr>
-                <form action=" " method="POST" class="my-4">
+                <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data" class="my-4">
                     @csrf
                     <div class="form-group">
                       <label for="image">Image</label>
@@ -21,9 +21,9 @@
                       <textarea name="caption" id="caption" class="form-control @error('caption') is-invalid @enderror border">
                         {{ old('caption') }}
                       </textarea>
-                      @error('image')
+                      @error('caption')
                       <div class="invalid-feedback">
-                          {{ $errors->first('image') }}
+                          {{ $errors->first('caption') }}
                       </div>
                       @enderror
                     </div>

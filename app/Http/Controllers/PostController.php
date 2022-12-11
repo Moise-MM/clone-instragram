@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -9,9 +10,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->only([
-            'index',
-        ]);
+        $this->middleware('auth');
     }
 
     /**
@@ -32,5 +31,37 @@ class PostController extends Controller
     public function create()
     {
         return view('posts.create');
+    }
+
+
+
+    /**
+     * Store new post
+     *
+     * @param Request $request
+     */
+    public function store(Request $request)
+    {
+        //validation
+        $formFields = $request->validate([
+            // 'another' => "",
+            'caption' => ['required'],
+            'image' => ['required','image']
+        ]);
+
+        $imagePath = request('image')->store('updloads','public');
+
+        $formFields['image'] = $imagePath;
+
+       //
+       //auth()->user()->posts()->create($formFields);
+       //add user_id
+       //$formFields['user_id'] = auth()->user()->id;
+
+       //store post
+       auth()->user()->posts()->create($formFields);
+
+       return redirect(route('profile.show',['id' => [auth()->user()->id]]));
+    
     }
 }
