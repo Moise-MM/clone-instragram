@@ -22,4 +22,15 @@ class PostController extends Controller
     {
         return view('posts.home');
     }
+
+
+    /**
+     * show form create post
+     *
+     * @return void
+     */
+    public function create()
+    {
+        return view('posts.create');
+    }
 }

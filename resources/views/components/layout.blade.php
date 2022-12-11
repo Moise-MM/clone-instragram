@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li class="nav-item pt-3" style="font-size: 1.3rem">
-                    <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link" data-class="fixed-left">
+                    <a href="{{ route('post.create') }}" class="nav-link" data-class="fixed-left">
                         <i class="fas fa-border-all mr-2"></i>
                         Create
                     </a>

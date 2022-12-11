@@ -14,10 +14,18 @@ class ProfileController extends Controller
         ]);
     }
     
+    /**
+     * show show user profile
+     *
+     * @param User $user
+     */
     public function show(User $user)
     {
         return view('profiles.show',[
             'user' => $user
         ]);
     }
+
+
+    
 }
