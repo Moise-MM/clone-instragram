@@ -1,12 +1,13 @@
 <x-layout>
 
     <div class="row mt-3">
-        <div class="col-3 p-5">
+        <div class="col-12 col-md-3 p-md-2 p-0 ml-3 ml-md-0 d-md-flex justify-content-md-center align-items-md-center">
             <img src="{{ asset('images/profile.png') }}" alt="" class="rounded-circle" width="130" height="130">
         </div>
-        <div class="col-6 pt-5">
-            <div>
+        <div class="col-12 col-md-6 pt-md-5 pt-0 mt-4 mt-md-0">
+            <div class="d-flex justify-content-between">
                 <h1>{{ $user->username }}</h1>
+                <a href="" class="btn btn-outline-primary text-capitalize btn-xs">Edit profile</a>
             </div>
             <div class="d-flex">
                 <div class="pr-4"><strong class="mr-1">200</strong>posts</div>

@@ -29,39 +29,43 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav">
-                <ul class="navbar-nav">
-                    <li class="nav-item pt-3" style="font-size: 1.3rem">
-                        <a class="nav-link" data-class="fixed-left">
-                            <i class="fa fa-home mr-2"></i>
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item pt-3" style="font-size: 1.3rem">
-                        <a class="nav-link" data-class="fixed-left">
-                            <i class="fas fa-search mr-2"></i>
-                            Search
-                        </a>
-                    </li>
-                    <li class="nav-item pt-3" style="font-size: 1.3rem">
-                        <a class="nav-link" data-class="fixed-left">
-                            <i class="fab fa-facebook-messenger mr-2"></i>
-                            Messages
-                        </a>
-                    </li>
-                    <li class="nav-item pt-3" style="font-size: 1.3rem">
-                        <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link" data-class="fixed-left">
-                            <i class="far fa-user-circle mr-2"></i>
-                            Profile
-                        </a>
-                    </li>
-                    <li class="nav-item pt-3" style="font-size: 1.3rem">
-                        <form action="{{ route('user.logout') }}" method="POST" class="inline">
-                            @csrf
-                            <button type="submit"  style="border: none; background-color:white">Log out</button>
-                        </form>
-                    </li>
-                </ul>
+            <ul class="navbar-nav lead">
+                <li class="nav-item pt-3" style="font-size: 1.3rem">
+                    <a class="nav-link" data-class="fixed-left">
+                        <i class="fa fa-home mr-2"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item pt-3" style="font-size: 1.3rem">
+                    <a class="nav-link" data-class="fixed-left">
+                        <i class="fas fa-search mr-2"></i>
+                        Search
+                    </a>
+                </li>
+                <li class="nav-item pt-3" style="font-size: 1.3rem">
+                    <a class="nav-link" data-class="fixed-left">
+                        <i class="fab fa-facebook-messenger mr-2"></i>
+                        Messages
+                    </a>
+                </li>
+                <li class="nav-item pt-3" style="font-size: 1.3rem">
+                    <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link" data-class="fixed-left">
+                        <i class="fas fa-border-all mr-2"></i>
+                        Create
+                    </a>
+                </li>
+                <li class="nav-item pt-3" style="font-size: 1.3rem">
+                    <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link" data-class="fixed-left">
+                        <i class="far fa-user-circle mr-2"></i>
+                        Profile
+                    </a>
+                </li>
+                <li class="nav-item pt-3" style="font-size: 1.3rem">
+                    <form action="{{ route('user.logout') }}" method="POST" class="inline">
+                        @csrf
+                        <button type="submit"  style="border: none; background-color:white">Log out</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </nav>
