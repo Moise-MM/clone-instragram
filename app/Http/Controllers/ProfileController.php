@@ -9,9 +9,7 @@ class ProfileController extends Controller
 {
     public function __construct()
     {   
-        $this->middleware('auth')->only([
-            'show'
-        ]);
+        $this->middleware('auth');
     }
     
     /**
@@ -19,9 +17,9 @@ class ProfileController extends Controller
      *
      * @param User $user
      */
-    public function show(User $user)
+    public function index(User $user)
     {
-        return view('profiles.show',[
+        return view('profiles.index',[
             'user' => $user
         ]);
     }

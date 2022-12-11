@@ -10,7 +10,7 @@
                 <a href="" class="btn btn-outline-primary text-capitalize btn-xs">Edit profile</a>
             </div>
             <div class="d-flex">
-                <div class="pr-4"><strong class="mr-1">200</strong>posts</div>
+                <div class="pr-4"><strong class="mr-1">{{ $user->posts->count() }}</strong>posts</div>
                 <div class="pr-4"><strong class="mr-1">30k</strong>followers</div>
                 <div class="pr-4"><strong class="mr-1">100</strong>following</div>
             </div>
@@ -31,16 +31,13 @@
             <i class="fas fa-grip-vertical"></i> Posts
         </div>
     </div>
-    <div class="row pt-3">
-        <div class="col-md-4">
-            <img src="https://images.pexels.com/photos/14612160/pexels-photo-14612160.jpeg" alt="" class="w-100" height="80%">
-        </div>
-        <div class="col-md-4">
-            <img src="https://images.pexels.com/photos/1213516/pexels-photo-1213516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="w-100" height="80%">
-        </div>
-        <div class="col-md-4">
-            <img src="https://images.pexels.com/photos/14683121/pexels-photo-14683121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="w-100" height="80%">
-        </div>
+    <div class="row pt-md-3 pt-3">
+        @foreach ($user->posts as $post )
+            <div class="col-md-4 ">
+                <img src="{{ asset('storage').'/'.$post->image }}" alt="" class="w-100 pb-3">
+            </div>
+        @endforeach
+        
     </div>
 
 </x-layout>

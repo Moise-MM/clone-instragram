@@ -55,7 +55,7 @@
                     </a>
                 </li>
                 <li class="nav-item pt-3" style="font-size: 1.3rem">
-                    <a href="{{ route('profile.show', Auth::user()) }}" class="nav-link" data-class="fixed-left">
+                    <a href="{{ route('profile.index', Auth::user()) }}" class="nav-link" data-class="fixed-left">
                         <i class="far fa-user-circle mr-2"></i>
                         Profile
                     </a>

@@ -37,5 +37,5 @@ Route::get("/p/create",[PostController::class,'create'])->name('post.create');
 Route::post('/p/store',[PostController::class,'store'])->name('post.store');
 
 //--------------------------
-//UserPost
-Route::get('/profile/{user?}',[ProfileController::class,'show'])->name('profile.show');
+//Profile
+Route::get('/profile/{user?}',[ProfileController::class,'index'])->name('profile.index');

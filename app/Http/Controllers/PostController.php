@@ -61,7 +61,7 @@ class PostController extends Controller
        //store post
        auth()->user()->posts()->create($formFields);
 
-       return redirect(route('profile.show',['id' => [auth()->user()->id]]));
+       return redirect(route('profile.index',auth()->user()->id));
     
     }
 }
