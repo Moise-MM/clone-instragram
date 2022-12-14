@@ -7,7 +7,7 @@
         <div class="col-12 col-md-6 pt-md-5 pt-0 mt-4 mt-md-0">
             <div class="d-flex justify-content-between">
                 <h1>{{ $user->username }}</h1>
-                <a href="" class="btn btn-outline-primary text-capitalize btn-xs">Edit profile</a>
+                <a href="{{ route('profile.edit', $user->id) }}" class="btn btn-outline-primary text-capitalize btn-xs">Edit profile</a>
             </div>
             <div class="d-flex">
                 <div class="pr-4"><strong class="mr-1">{{ $user->posts->count() }}</strong>posts</div>

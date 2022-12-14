@@ -41,3 +41,4 @@ Route::get("p/{post}",[PostController::class,'show'])->name('post.show');
 //--------------------------
 //Profile
 Route::get('/profile/{user?}',[ProfileController::class,'index'])->name('profile.index');
+Route::get("/profile/{user}/id",[ProfileController::class,'edit'])->name('profile.edit');

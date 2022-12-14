@@ -19,9 +19,19 @@ class ProfileController extends Controller
      */
     public function index(User $user)
     {
-        return view('profiles.index',[
-            'user' => $user
-        ]);
+        return view('profiles.index',compact('user'));
+    }
+
+
+    /**
+     * show edit form
+     *
+     * @param User $user
+     * @return void
+     */
+    public function edit(User $user)
+    {   
+        return view('profiles.edit', compact('user'));
     }
 
 
