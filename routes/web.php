@@ -35,6 +35,8 @@ Route::get('/', [PostController::class,'index'])->name('post.index');
 Route::get("/p/create",[PostController::class,'create'])->name('post.create');
 //
 Route::post('/p/store',[PostController::class,'store'])->name('post.store');
+//
+Route::get("p/{post}",[PostController::class,'show'])->name('post.show');
 
 //--------------------------
 //Profile

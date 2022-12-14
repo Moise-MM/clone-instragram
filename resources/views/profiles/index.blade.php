@@ -34,7 +34,7 @@
     <div class="row pt-md-3 pt-3">
         @foreach ($user->posts as $post )
             <div class="col-md-4 ">
-                <img src="{{ asset('storage').'/'.$post->image }}" alt="" class="w-100 pb-3">
+                <a href="{{ route('post.show', $post->id) }}"><img src="{{ asset('storage').'/'.$post->image }}" alt="" class="w-100 pb-3"></a>
             </div>
         @endforeach
         

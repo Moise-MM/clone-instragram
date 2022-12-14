@@ -24,6 +24,12 @@ class PostController extends Controller
     }
 
 
+    public function show(Post $post)
+    {
+        return view('posts.show',compact('post'));
+    }
+
+
     /**
      * show form create post
      *
@@ -69,4 +75,5 @@ class PostController extends Controller
        return redirect(route('profile.index',auth()->user()->id));
     
     }
+
 }
