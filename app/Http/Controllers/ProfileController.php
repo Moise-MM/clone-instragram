@@ -10,7 +10,7 @@ class ProfileController extends Controller
 {
     public function __construct()
     {   
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['index']);
     }
     
     /**
@@ -32,6 +32,8 @@ class ProfileController extends Controller
      */
     public function edit(User $user)
     {   
+        $this->authorize('update', $user->profile);
+
         return view('profiles.edit', compact('user'));
     }
 
@@ -39,6 +41,8 @@ class ProfileController extends Controller
 
     public function update(Request $request, User $user)
     {
+        $this->authorize('update', $user->profile);
+
         //validation
         $formFields = $request->validate([
             'email' => ['required','email'],
