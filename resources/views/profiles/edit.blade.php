@@ -1,10 +1,10 @@
 <x-layout>
 
     <div class="row">
-        <div class="col-md-6 mx-auto mt-5">
+        <div class="col-md-6 mx-auto mt-2">
             <h1 class="my-3">Edit profile</h1>
             <hr>
-            <form action="{{ route('profile.update', $user->id) }}" method="POST">
+            <form action="{{ route('profile.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -68,6 +68,19 @@
                             </div>
                             @enderror
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="image">Image</label>
+                            <input name="image" type="file" class="border px-3 form-control @error('image') is-invalid @enderror" id="image" aria-describedby="image">
+                            @error('image')
+                            <div class="invalid-feedback">
+                                {{ $errors->first('image') }}
+                            </div>
+                            @enderror
+                          </div>
                     </div>
                 </div>
                 

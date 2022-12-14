@@ -2,7 +2,7 @@
 
     <div class="row mt-3">
         <div class="col-12 col-md-3 p-md-2 p-0 ml-3 ml-md-0 d-md-flex justify-content-md-center align-items-md-center">
-            <img src="{{ asset('images/profile.png') }}" alt="" class="rounded-circle" width="130" height="130">
+            <img src="{{ $user->profile->image ? asset('storage').'/'.$user->profile->image : asset('images/profile.jpg') }}" alt="" class="rounded-circle" width="130" height="130">
         </div>
         <div class="col-12 col-md-6 pt-md-5 pt-0 mt-4 mt-md-0">
             <div class="d-flex justify-content-between">
