@@ -50,16 +50,16 @@ class ProfileController extends Controller
         $profile = Profile::find($user->profile->id);
 
         //update user
-        $user->update($formFields);
+        auth()->user()->update($formFields);
 
         //update profile
         $profile->update([
             'description' => $request->input('description'),
-            'url' => $request->input('url'),
+            'url' => $request->input('url'), 
             'user_id' => $user->id
         ]);
 
-        return redirect(route('profile.index', $user->id));
+        return redirect(route('profile.index', auth()->user()->id));
 
         
     }
