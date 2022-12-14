@@ -1,4 +1,4 @@
-<x-layout_auth>
+<x-layout>
 
     <div class="row">
         <div class="col-md-4 mx-auto mt-5">
@@ -9,7 +9,7 @@
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
-                  <input name="email" type="email" class="form-control @error('email') is-invalid @enderror"" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input name="email" type="email" class="form-control @error('email') is-invalid @enderror border px-2" id="exampleInputEmail1" aria-describedby="emailHelp">
                   @error('email')
                   <div class="invalid-feedback">
                       {{ $errors->first('email') }}
@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"" id="exampleInputPassword1">
+                  <input name="password" type="password" class="form-control @error('password') is-invalid @enderror border px-2" id="exampleInputPassword1">
                   @error('email')
                   <div class="invalid-feedback">
                       {{ $errors->first('password') }}
@@ -35,4 +35,4 @@
         </div>
     </div>
 
-</x-layout_auth>
+</x-layout>

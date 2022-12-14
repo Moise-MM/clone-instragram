@@ -70,12 +70,12 @@
                     </li>
                 @else
                 <li class="nav-item pt-3" style="font-size: 1.3rem">
-                    <a class="nav-link" data-class="fixed-left">
+                    <a href="{{ route('login') }}" class="nav-link" data-class="fixed-left">
                         Login
                     </a>
                 </li>
                 <li class="nav-item pt-3" style="font-size: 1.3rem">
-                    <a class="nav-link" data-class="fixed-left">
+                    <a href="{{ route('user.register') }}" class="nav-link" data-class="fixed-left">
                         Sign up
                     </a>
                 </li>
