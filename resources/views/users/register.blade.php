@@ -1,4 +1,4 @@
-<x-layout_auth>
+<x-layout>
 
     <div class="row">
         <div class="col-md-4 mx-auto mt-2">
@@ -10,7 +10,7 @@
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
-                  <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ old('email') }}">
+                  <input name="email" type="email" class="form-control @error('email') is-invalid @enderror border px-2" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ old('email') }}">
                   @error('email')
                     <div class="invalid-feedback">
                         {{ $errors->first('email') }}
@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Full name</label>
-                    <input name="fullname" type="text" class="form-control @error('fullname') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp"  value="{{ old('fullname') }}">
+                    <input name="fullname" type="text" class="form-control @error('fullname') is-invalid @enderror border px-2" id="exampleInputEmail1" aria-describedby="emailHelp"  value="{{ old('fullname') }}">
                     @error('fullname')
                     <div class="invalid-feedback">
                         {{ $errors->first('fullname') }}
@@ -28,7 +28,7 @@
                 </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
-                    <input name="username" type="text" class="form-control @error('username') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp"  value="{{ old('username') }}">
+                    <input name="username" type="text" class="form-control @error('username') is-invalid @enderror border px-2" id="exampleInputEmail1" aria-describedby="emailHelp"  value="{{ old('username') }}">
                     @error('username')
                     <div class="invalid-feedback">
                         {{ $errors->first('username') }}
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword1"  value="{{ old('password') }}">
+                  <input name="password" type="password" class="form-control @error('password') is-invalid @enderror border px-2" id="exampleInputPassword1"  value="{{ old('password') }}">
                   @error('password')
                   <div class="invalid-feedback">
                       {{ $errors->first('password') }}
@@ -54,4 +54,4 @@
         </div>
     </div>
 
-</x-layout_auth>
+</x-layout>
