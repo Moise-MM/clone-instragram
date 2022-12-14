@@ -9,6 +9,16 @@ class Profile extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'description',
+        'url',
+        'user_id',
+    ];
 
     public function user()
     {
