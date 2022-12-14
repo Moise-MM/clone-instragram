@@ -18,6 +18,7 @@ class Profile extends Model
         'description',
         'url',
         'user_id',
+        'image'
     ];
 
     public function user()

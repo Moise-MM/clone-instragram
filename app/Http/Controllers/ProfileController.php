@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -48,20 +49,32 @@ class ProfileController extends Controller
             'email' => ['required','email'],
             'fullname' => ['required','min:5', 'string'],
             'username' => ['required','min:5','string'],
+            'image' => ['image']
         ]);
         
-        //get profile user
-        $profile = Profile::find($user->profile->id);
 
         //update user
         auth()->user()->update($formFields);
 
+        //
+        if($request->hasFile('image'))
+        {
+            $imagePath = request('image')->store('profile','public');
+
+            //resize image
+            $image = Image::make(public_path('storage/'.$imagePath))->fit(1000,1000);
+            $image->save();
+        }
+
+
         //update profile
-        $profile->update([
+         //update user
+         auth()->user()->profile->update([
             'description' => $request->input('description'),
             'url' => $request->input('url'), 
-            'user_id' => $user->id
-        ]);
+            'image' => $imagePath
+         ]);
+
 
         return redirect(route('profile.index', auth()->user()->id));
 
